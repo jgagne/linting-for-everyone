@@ -1,0 +1,7 @@
+# Demo excerpt of Apify.FillerWords: retain only its existing simply mapping.
+extends: substitution
+level: suggestion
+message: "Remove filler word or phrase: '%s' instead of '%s'."
+nonword: true
+swap:
+  'simply ': ''

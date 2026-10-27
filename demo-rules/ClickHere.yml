@@ -1,0 +1,7 @@
+extends: existence
+message: "Use descriptive link text instead of '%s'. Screen readers read links out of context."
+level: warning
+scope: raw
+nonword: true
+tokens:
+  - '\[(?:[Cc]lick here|[Hh]ere|[Tt]his link|[Rr]ead more)\]\('

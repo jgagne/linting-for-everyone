@@ -1,0 +1,201 @@
+extends: substitution
+level: suggestion
+message: "Use plain language: '%s' instead of '%s'."
+exceptions:
+  - 'https?://\S+'
+  # "a number of items/results/records" describes a configurable quantity - not "several"
+  - "a number of (?:items|results|records|pages|requests|runs|files|entries)"
+  # "modified/Modified" as a timestamp label - "changed" is wrong here
+  - "Last modified"
+  - "Modified at"
+  - "last modified"
+  - "modified at"
+  # "significantly restrict/limit" - precision matters in permissions/policy context
+  - "significantly restrict"
+  - "significantly limit"
+  # "in terms of" after "performance" - means "as measured by", not replaceable with "for"
+  # ── "ensure/ensures" in technical guarantee contexts - NOT instructional filler.
+  # When "ensures" describes system behaviour (encryption, access control, data integrity),
+  # it's a technical claim, not formal register. The completeness check flags these.
+  - "ensures? (?:they|it|the data|the (?:token|key|secret|field|connection)) (?:is|are) (?:properly |securely |always )?(?:encrypted|protected|secured|validated|verified|authenticated|authorized)"
+  - "performance in terms of"
+  # "over [number] characters" in SEO/truncation context - "over" is natural shorthand.
+  # "More than 60 characters" is wordier without being clearer in a character-limit context.
+  - 'over \d+ characters (?:will be|are|get) (?:truncated|cut off)'
+  # financial/identity context - "info" guards moved to plain-language-ui.yml
+  # "valid immediately" - timing context where "now" changes meaning
+  # "immediately" = without delay after trigger; "now" = at this moment
+  - "valid immediately"
+  - "takes? effect immediately"
+  - "applies immediately"
+  # "glass ceiling" - idiom, not a literal limit
+  - "glass ceiling"
+  # Security/urgency contexts - "immediately" is standard security communication
+  # language that signals genuine urgency. "Now" is too casual for breach notifications.
+  - '(?:[Cc]hange|[Rr]eset|[Rr]otate|[Rr]evoke|[Uu]pdate|[Rr]eplace)\s+(?:it|the|your|this)\s+\w*\s*[Ii]mmediately'
+  # Bare imperative + immediately - button labels for security actions
+  - "^[Rr]otate [Ii]mmediately$"
+  - "^[Rr]eset [Ii]mmediately$"
+  - "^[Cc]hange [Ii]mmediately$"
+  - '[Ii]mmediately[\s\S]*(?:[Tt]oken|[Pp]assword|[Kk]ey|[Cc]redential|[Ss]ecret)'
+  - '(?:[Tt]oken|[Pp]assword|[Kk]ey|[Cc]redential|[Ss]ecret)[\s\S]*[Ii]mmediately'
+  - "[Pp]ayment required [Ii]mmediately"
+  # "immediately" in billing/collections urgency - "now" is too casual for past-due notices
+  - '[Pp]ayment[\s\S]{0,20}[Ii]mmediately'
+  - '[Ii]mmediately[\s\S]{0,20}[Pp]ayment'
+  - "applied immediately"
+  - "charged immediately"
+  # "Aborts ... immediately" - API operation description. "Immediately" means "without
+  # graceful shutdown" (force-kill semantics), not temporal "at this moment".
+  - '[Aa]borts[\s\S]{0,30}immediately'
+  # HTML comments - developer-facing, not user copy
+  - '<!--[\s\S]*?-->'
+  # "purchase order" - legal/accounting term (PO). "Buy order" is not a recognized term.
+  - "[Pp]urchase [Oo]rder"
+
+swap:
+  'as a means of': 'to'
+  'have to be subscribed': 'need to be subscribed'
+  'due to the fact that': 'because'
+  'for the purpose of': 'to'
+  'in accordance with': 'under'
+  'in the near future': 'soon'
+  'encountered an': 'ran into an'
+  'encountered a': 'ran into a'
+  'until such time as': 'until'
+  'in an effort to': 'to'
+  'in the amount of': 'for'
+  'with reference to': 'about'
+
+  'Please ensure that': 'Make sure'
+  'please ensure that': 'make sure'
+  'Please ensure': 'Make sure'
+  'Ensure that you': 'Make sure you'
+  'ensure that you': 'make sure you'
+  'Ensure that your': 'Make sure your'
+  'ensure that your': 'make sure your'
+  'Ensure that the': 'Make sure the'
+  'ensure that the': 'make sure the'
+  'Ensure you': 'Make sure you'
+  'ensure you': 'make sure you'
+  'You must ensure': 'Make sure'
+  'you must ensure': 'make sure'
+
+  'This ensures your': 'This keeps your'
+  'this ensures your': 'this keeps your'
+  'This ensures the': 'This keeps the'
+  'this ensures the': 'this keeps the'
+  'which ensures your': 'which keeps your'
+  'which ensures the': 'which keeps the'
+  'that ensures your': 'that keeps your'
+  'that ensures the': 'that keeps the'
+  'ensures consistency': 'maintains consistency'
+  'ensures reliability': 'maintains reliability'
+  'ensures stability': 'maintains stability'
+  'ensures accuracy': 'maintains accuracy'
+  'with the exception of': 'except'
+  'in view of': 'since'
+
+  immediately: 'now'
+
+  commence: 'start'
+  purchase: 'buy'
+  obtain: 'get'
+  remain: 'stay'
+  remains: 'stays'
+  customized: 'custom'
+  'fill in your': 'enter your'
+  'Fill in your': 'Enter your'
+  'fill out your': 'enter your'
+  'Fill out your': 'Enter your'
+  'fill in the': 'complete the'
+  'Fill in the': 'Complete the'
+  'fill out the': 'complete the'
+  'Fill out the': 'Complete the'
+  modify: 'change'
+  regarding: 'about'
+  'with regard to': 'about'
+  approximately: 'about'
+  'the aforementioned': 'these'
+  aforementioned: 'these'
+  hereafter: 'after this'
+  heretofore: 'until now'
+  herewith: 'with this'
+
+  'inform users': 'tell users'
+  'inform people': 'tell people'
+  'inform them': 'tell them'
+  herein: 'here'
+  thereafter: 'after that'
+  thereof: 'of that'
+  therein: 'in that'
+  therewith: 'with that'
+  wherein: 'where'
+  whereof: 'of which'
+  whereas: 'because'
+  facilitate: 'help'
+  leverage: 'use'
+  utilize: 'use'
+  utilizes: 'uses'
+  utilized: 'used'
+  utilizing: 'using'
+
+  'circumvent': 'bypass'
+  'circumvents': 'bypasses'
+  'circumventing': 'bypassing'
+  'ceiling': 'limit'
+  'employ': 'use'
+  'employs': 'uses'
+  'employing': 'using'
+  'retrieve': 'get'
+  'retrieves': 'gets'
+  'retrieving': 'getting'
+  'is not sufficient': "isn't enough"
+  'will not be sufficient': "won't be enough"
+  'prior to': 'before'
+
+  'shall not': "can't"
+  shall: 'must'
+
+  significantly: 'greatly'
+  completely: 'fully'
+
+  'in terms of': 'for'
+  'Here you can': 'You can'
+  'here you can': 'you can'
+  'navigate to': 'go to'
+
+  'Previously,': 'Before'
+
+  ', assuming ': ', if '
+  '\. Assuming ': '. If '
+
+  'must be at most (\d[\d,]*) characters long': 'can have up to $1 characters'
+  'must be at most (\d[\d,]*) characters': 'can have up to $1 characters'
+  'must be at most (\d[\d,]*) items': 'can have up to $1 items'
+  'must be at most (\d[\d,]*) files': 'can have up to $1 files'
+  'must be at most (\d[\d,]*) entries': 'can have up to $1 entries'
+  'must be at most (\d[\d,]*) requests': 'can have up to $1 requests'
+
+  'If you wish to': 'If you want to'
+  'if you wish to': 'if you want to'
+  'you wish to': 'you want to'
+
+  'assistance': 'help'
+  'for assist': 'for help'
+
+  ', since the two': ', because the two'
+  ', since some': ', because some'
+  ', since nothing': ', because nothing'
+  ', since web': ', because web'
+
+  'Type your': 'Enter your'
+  'type your': 'enter your'
+  'Type a ': 'Enter a '
+  'type a ': 'enter a '
+  'Type an ': 'Enter an '
+  'type an ': 'enter an '
+  'Type the ': 'Enter the '
+  'type the ': 'enter the '
+
+  'and is used for its price estimate': 'and sets the price estimate'
