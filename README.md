@@ -41,6 +41,7 @@ Zero findings means the enabled checks passed. Review the writing, too.
 - [Vale configuration generator](https://vale.sh/generator)
 - [Apify Vale styles](https://github.com/apify/vale-rules)
 - [markdownlint](https://github.com/DavidAnson/markdownlint)
+- [Markdown reference](https://www.markdownguide.org/getting-started/)
 - [Vale agent skills](https://vale.sh/skills)
 
 ### In your editor
