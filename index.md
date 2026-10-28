@@ -22,8 +22,8 @@ style: |
   section small { font-size: 20px; line-height: 1.35; }
   section.screenshot { padding: 24px 40px; }
   section.screenshot h2 { font-size: 32px; margin: 0 0 12px; }
-  section.screenshot p { font-size: 23px; margin: 8px 0 0; }
-  section.screenshot img { display: block; margin: 0 auto; object-fit: contain; }
+  section.screenshot p { font-size: 23px; margin: 8px 0 0; text-align: center; }
+  section.screenshot img { display: block; width: auto; max-width: 100%; margin: 0 auto; }
   section.editors { padding: 36px 50px; }
   section.editors p { font-size: 24px; }
   section.editors img { object-fit: contain; }
@@ -53,7 +53,7 @@ Justin Gagne, Senior UX Writer<br>
 
 ## A style guide can give feedback while you write
 
-![w:1180 h:530 Writing feedback in VS Code](img/editor-feedback-1920w.png)
+![h:530 Writing feedback in VS Code](img/editor-feedback-1920w.png)
 
 <small>A suggestion, a reason, and a place to revise.</small>
 
@@ -147,7 +147,7 @@ These checks reflect **Apify’s** editorial decisions.
 
 Vale checks prose. markdownlint checks Markdown structure.
 
-![w:1180 h:530 Vale and markdownlint findings in VS Code](img/editor-feedback-1920w.png)
+![h:500 Vale and markdownlint findings in VS Code](img/editor-feedback-1920w.png)
 
 <small>A deliberately flawed draft. Download: [editor-demo.zip](https://github.com/jgagne/linting-for-everyone/raw/refs/heads/main/editor-demo.zip)</small>
 
@@ -157,9 +157,7 @@ Vale checks prose. markdownlint checks Markdown structure.
 
 ## Try a few rules in ProseLint Web
 
-Try Vale’s feedback without setting up an editor.
-
-![w:1180 h:530 ProseLint Web showing contraction and passive-voice suggestions](img/demo-01-std-1920w.png)
+![h:530 ProseLint Web showing contraction and passive-voice suggestions](img/demo-01-std-1920w.png)
 
 <small>Std (standard rules) suggests two edits: “do not” → “don’t” / “was created” → consider active voice.</small>
 
@@ -169,7 +167,7 @@ Try Vale’s feedback without setting up an editor.
 
 ## Add two Apify rules
 
-![w:1180 h:530 ProseLint Web showing four findings after adding Apify rules](img/demo-02-apify-1920w.png)
+![h:530 ProseLint Web showing four findings after adding Apify rules](img/demo-02-apify-1920w.png)
 
 <small>4 findings. Our rules add “utilize” → “use” and descriptive link text.</small>
 
@@ -179,7 +177,7 @@ Try Vale’s feedback without setting up an editor.
 
 ## Revise, then check again
 
-![w:1180 h:530 Revised draft with zero findings under the enabled checks](img/demo-03-clean-1920w.png)
+![h:530 Revised draft with zero findings under the enabled checks](img/demo-03-clean-1920w.png)
 
 <small>Zero findings with these checks. Is the writing finished?</small>
 
@@ -189,7 +187,7 @@ Try Vale’s feedback without setting up an editor.
 
 ## One more rule, one more question
 
-![w:1180 h:530 An additional rule flags simply in the revised draft](img/demo-04-filler-1920w.png)
+![h:530 An additional rule flags simply in the revised draft](img/demo-04-filler-1920w.png)
 
 <small>“Simply” adds nothing here and can make the task sound easy for everyone.</small>
 
@@ -199,7 +197,7 @@ Try Vale’s feedback without setting up an editor.
 
 ## Keep the meaning. Remove the filler.
 
-![w:1180 h:530 Draft with simply removed and all enabled checks passing](img/demo-05-done-1920w.png)
+![h:530 Draft with simply removed and all enabled checks passing](img/demo-05-done-1920w.png)
 
 <small>“You can use the tool to extract data.” All enabled checks pass.</small>
 
@@ -325,7 +323,7 @@ Show the diff and unresolved findings for human review.
 
 ## Keep linters in your agent workflow
 
-![w:1180 h:530 Vale agent skills page with setup and workflow resources](img/vale-skills-1920w.png)
+![h:530 Vale agent skills page with setup and workflow resources](img/vale-skills-1920w.png)
 
 <small>Setup, fixes, triage, vocabulary, and CI. [vale.sh/skills](https://vale.sh/skills)</small>
 
