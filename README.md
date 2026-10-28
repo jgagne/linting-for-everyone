@@ -9,7 +9,7 @@ Vale checks prose against your style guide. markdownlint checks Markdown structu
 
 ## Editor demo
 
-Download and unzip [editor-demo.zip](editor-demo.zip) for the draft, revised text, bundled Vale rules, and VS Code setup shown in the slides. Open its README for instructions.
+Download and unzip [editor-demo.zip](https://github.com/jgagne/linting-for-everyone/raw/refs/heads/main/editor-demo.zip) for the draft, revised text, bundled Vale rules, and VS Code setup shown in the slides. Open its README for instructions.
 
 ## Browser playground
 
