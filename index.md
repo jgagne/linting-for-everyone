@@ -8,6 +8,7 @@ style: |
   ::backdrop { background-color: #fff; }
   section { background-color: #fff; }
   h1, h2 { color: #222; }
+  section pre { line-height: 1.35; }
   section img { border: 1px solid #ddd; box-sizing: border-box; }
   section ol, section ul { padding-left: 0; }
   section.editor-options .editor-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
@@ -101,36 +102,7 @@ These checks reflect **Apify’s** editorial decisions.
 
 ---
 
-## Make the same instructions easier to read
 
-**Before**
-
-> Prior to initiating the extraction process, verify that the configuration parameters accurately reflect your requirements.
-
-**After**
-
-> Before you extract data, check that the settings match what you need.
-
-**Vale can flag a passage’s reading level. You decide how to rewrite it.**
-
-<small>Score the passage; review the wording. [docs.vale.sh/checks/readability](https://docs.vale.sh/checks/readability)</small>
-
----
-
-## Check the Markdown structure, too
-
-Markdown is plain text with headings, lists, links, and code.
-
-**markdownlint** checks its structure and conventions.
-
-| Before | After |
-| --- | --- |
-| `# Getting started` | `# Getting started` |
-| `### How to set up the tool` | `## How to set up the tool` |
-
-<small>markdownlint rule MD001: don’t skip heading levels.</small>
-
----
 
 <!-- _class: editor-options -->
 
@@ -139,7 +111,7 @@ Markdown is plain text with headings, lists, links, and code.
 <div class="editor-grid">
 <div>
 <h3>VS Code</h3>
-<p>Familiar, from Microsoft.</p>
+<p>Familiar, from Microsoft</p>
 <img src="img/vscode-1920w.png" alt="VS Code homepage">
 <ul>
 <li><a href="https://code.visualstudio.com/">code.visualstudio.com</a></li>
@@ -148,7 +120,7 @@ Markdown is plain text with headings, lists, links, and code.
 </div>
 <div>
 <h3>WebStorm</h3>
-<p>Local, from JetBrains.</p>
+<p>Local, from JetBrains</p>
 <img src="img/webstorm-1920w.png" alt="WebStorm homepage">
 <ul>
 <li><a href="https://www.jetbrains.com/webstorm/">jetbrains.com/webstorm</a></li>
@@ -157,7 +129,7 @@ Markdown is plain text with headings, lists, links, and code.
 </div>
 <div>
 <h3>Zed</h3>
-<p>Lightweight, with GitHub Atom roots.</p>
+<p>Lightweight, with GitHub Atom roots</p>
 <img src="img/zed-1920w.png" alt="Zed homepage with its editor preview selected">
 <ul>
 <li><a href="https://zed.dev/">zed.dev</a></li>
@@ -228,6 +200,22 @@ Markdown is plain text with headings, lists, links, and code.
 
 ---
 
+## Make the same instructions easier to read
+
+**Before (grade 19.4)**
+
+> Prior to initiating the extraction process, verify that the configuration parameters accurately reflect your requirements.
+
+**After (grade 4.8)**
+
+> Before you extract data, check that the settings match what you need.
+
+**Vale can flag a passage’s reading level. You decide how to rewrite it.**
+
+<small>Flesch–Kincaid estimates. Review the wording, not just the score. [docs.vale.sh/checks/readability](https://docs.vale.sh/checks/readability)</small>
+
+---
+
 ## A rule is a small, readable agreement
 
 Match a product name and suggest its official spelling.
@@ -262,6 +250,21 @@ swap:
 > Use descriptive link text. Screen readers read links out of context.
 
 <small>See rule: [demo-rules/ClickHere.yml](https://github.com/jgagne/linting-for-everyone/blob/main/demo-rules/ClickHere.yml)</small>
+
+---
+
+## Well-formed is well-structured
+
+Markdown is plain text with headings, lists, links, and code.
+
+**markdownlint** checks its structure and conventions.
+
+| Before | After |
+| --- | --- |
+| `# Getting started` | `# Getting started` |
+| `### How to set up the tool` | `## How to set up the tool` |
+
+<small>markdownlint rule MD001: don’t skip heading levels.</small>
 
 ---
 
@@ -300,13 +303,13 @@ Commit the rules so people and agents share the same checks.
 
 ## Give the agent a checkable task
 
-The workflow must actually run the checks.
+Include the checks in your instructions:
 
 ```text
 Revise this draft using our project style guide.
 Preserve meaning, facts, links, and code examples.
-Run Vale and markdownlint with the project configuration;
-fix clear issues and rerun both tools.
+Run Vale and markdownlint with the project configuration.
+Fix clear issues and rerun both tools.
 Flag suggestions that need judgment or evidence.
 Show the diff and unresolved findings for human review.
 ```
@@ -340,7 +343,8 @@ Pick one recurring editorial comment. Turn it into a useful check.
 
 - **Set up Vale:** [docs.vale.sh/topics/quickstart](https://docs.vale.sh/topics/quickstart)
 - **Explore styles and configure Vale:** [vale.sh/explorer](https://vale.sh/explorer) / [vale.sh/generator](https://vale.sh/generator)
+- **Vale in your editor:** [VS Code](https://marketplace.visualstudio.com/items?itemName=ChrisChinchilla.vale-vscode) / [WebStorm](https://plugins.jetbrains.com/plugin/19613-vale-cli) / [Zed](https://zed.dev/extensions/vale)
 - **Add markdownlint to VS Code:** [marketplace.visualstudio.com](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
 - **Run checks in CI:** [github.com/vale-cli/vale-action](https://github.com/vale-cli/vale-action) / [github.com/DavidAnson/markdownlint-cli2-action](https://github.com/DavidAnson/markdownlint-cli2-action)
-- **Learn Markdown:** [markdownguide.org/getting-started](https://www.markdownguide.org/getting-started/)
+- **Markdown reference:** [markdownguide.org/getting-started](https://www.markdownguide.org/getting-started/)
 
