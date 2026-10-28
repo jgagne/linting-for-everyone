@@ -328,7 +328,7 @@ Show the diff and unresolved findings for human review.
 
 ---
 
-## Try it in your workflow
+## Try linters in your workflow
 
 Pick one recurring editorial comment. Turn it into a useful check.
 
