@@ -11,6 +11,7 @@ style: |
   section pre { line-height: 1.35; }
   section img { border: 1px solid #ddd; box-sizing: border-box; }
   section ol, section ul { padding-left: 0; }
+  section ul ul { font-size: inherit; padding-left: 1em; }
   section.editor-options .editor-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
   section.editor-options h3 { margin: 0; font-size: 28px; }
   section.editor-options .editor-grid p { font-size: 22px; line-height: 1.35; margin: 8px 0 24px; }
@@ -42,7 +43,7 @@ Justin Gagne, Senior UX Writer<br>
 
 ## Linters check your writing against style rules
 
-- Test and refine your style guide as you write.
+- Test and refine your style guide with real drafts.
 - Make writing easier for more readers to understand.
 - Keep Markdown structure consistent.
 
@@ -54,7 +55,7 @@ Justin Gagne, Senior UX Writer<br>
 
 ![w:1180 h:530 Writing feedback in VS Code](img/editor-feedback-1920w.png)
 
-<small>Vale brings style-guide feedback into your editor.</small>
+<small>A suggestion, a reason, and a place to revise.</small>
 
 ---
 
@@ -144,6 +145,8 @@ These checks reflect **Apify’s** editorial decisions.
 
 ## See both tools in your editor
 
+Vale checks prose. markdownlint checks Markdown structure.
+
 ![w:1180 h:530 Vale and markdownlint findings in VS Code](img/editor-feedback-1920w.png)
 
 <small>A deliberately flawed draft. Download: [editor-demo.zip](https://github.com/jgagne/linting-for-everyone/raw/refs/heads/main/editor-demo.zip)</small>
@@ -153,6 +156,8 @@ These checks reflect **Apify’s** editorial decisions.
 <!-- _class: screenshot -->
 
 ## Try a few rules in ProseLint Web
+
+Try Vale’s feedback without setting up an editor.
 
 ![w:1180 h:530 ProseLint Web showing contraction and passive-voice suggestions](img/demo-01-std-1920w.png)
 
@@ -212,7 +217,7 @@ These checks reflect **Apify’s** editorial decisions.
 
 **Vale can flag a passage’s reading level. You decide how to rewrite it.**
 
-<small>Flesch–Kincaid estimates. Review the wording, not just the score. [docs.vale.sh/checks/readability](https://docs.vale.sh/checks/readability)</small>
+<small>Flesch–Kincaid estimates. Review the wording, too. [docs.vale.sh/checks/readability](https://docs.vale.sh/checks/readability)</small>
 
 ---
 
@@ -253,11 +258,9 @@ swap:
 
 ---
 
-## Well-formed is well-structured
+## Check the structure, too
 
-Markdown is plain text with headings, lists, links, and code.
-
-**markdownlint** checks its structure and conventions.
+Well-formed is well-structured. **markdownlint** checks structure and conventions.
 
 | Before | After |
 | --- | --- |
@@ -268,7 +271,7 @@ Markdown is plain text with headings, lists, links, and code.
 
 ---
 
-## Choose your rules
+## Set up Vale in your project
 
 1. Install Vale: [docs.vale.sh/topics/quickstart](https://docs.vale.sh/topics/quickstart)
 2. Choose styles and generate `.vale.ini`: [vale.sh/generator](https://vale.sh/generator)
@@ -333,7 +336,7 @@ Show the diff and unresolved findings for human review.
 Pick one recurring editorial comment. Turn it into a useful check.
 
 - **Browser playground:** [proselintweb.com/editor](https://proselintweb.com/editor)
-- **Adapted demo rules:** [github.com/jgagne/linting-for-everyone/tree/main/demo-rules](https://github.com/jgagne/linting-for-everyone/tree/main/demo-rules)
+  - Adapted demo rules: [github.com/jgagne/linting-for-everyone/tree/main/demo-rules](https://github.com/jgagne/linting-for-everyone/tree/main/demo-rules)
 - **Apify Vale styles:** [github.com/apify/vale-rules](https://github.com/apify/vale-rules)
 - **Check your Markdown:** [github.com/DavidAnson/markdownlint](https://github.com/DavidAnson/markdownlint)
 
