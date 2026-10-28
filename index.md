@@ -346,5 +346,5 @@ Pick one recurring editorial comment. Turn it into a useful check.
 - **Vale in your editor:** [VS Code](https://marketplace.visualstudio.com/items?itemName=ChrisChinchilla.vale-vscode) / [WebStorm](https://plugins.jetbrains.com/plugin/19613-vale-cli) / [Zed](https://zed.dev/extensions/vale)
 - **Add markdownlint to VS Code:** [marketplace.visualstudio.com](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
 - **Run checks in CI:** [github.com/vale-cli/vale-action](https://github.com/vale-cli/vale-action) / [github.com/DavidAnson/markdownlint-cli2-action](https://github.com/DavidAnson/markdownlint-cli2-action)
-- **Markdown reference:** [markdownguide.org/getting-started](https://www.markdownguide.org/getting-started/)
+- **Markdown reference:** [markdownguide.org/basic-syntax](https://www.markdownguide.org/basic-syntax/)
 
