@@ -43,6 +43,12 @@ Zero findings means the enabled checks passed. Review the writing, too.
 - [markdownlint](https://github.com/DavidAnson/markdownlint)
 - [Vale agent skills](https://vale.sh/skills)
 
+### In your editor
+
+- [Vale for VS Code](https://marketplace.visualstudio.com/items?itemName=ChrisChinchilla.vale-vscode)
+- [Vale for WebStorm](https://plugins.jetbrains.com/plugin/19613-vale-cli)
+- [Vale for Zed](https://zed.dev/extensions/vale)
+
 ## Build the slides
 
 ```bash
@@ -53,6 +59,5 @@ npx @marp-team/marp-cli index.md --html --allow-local-files -o index.html
 npx @marp-team/marp-cli index.md --html --allow-local-files -o linting-for-everyone.pdf
 ```
 
-With Marp CLI installed, `bash build-slides.sh` also rebuilds the HTML and keeps the presentation backdrop white.
 
 Built with [Marp](https://marp.app).
